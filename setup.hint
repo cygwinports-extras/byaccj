@@ -1,0 +1,9 @@
+category: Devel
+requires:
+sdesc: "Berkeley YACC with Java output support"
+ldesc: "BYACC/J is an extension of the Berkeley v 1.8 YACC-compatible 
+parser generator. Standard YACC takes a YACC source file, and generates 
+one or more C files from it, which if compiled properly, will produce a 
+LALR-grammar parser. This version adds a '-J' flag which will cause 
+BYACC to generate Java source code, instead. So there finally is a YACC 
+for Java now!"
