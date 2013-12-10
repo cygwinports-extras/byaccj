@@ -1,0 +1,25 @@
+NAME="byaccj"
+VERSION=1.15
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Berkeley YACC with Java output support"
+DESCRIPTION="BYACC/J is an extension of the Berkeley v 1.8 YACC-compatible
+parser generator. Standard YACC takes a YACC source file, and generates one
+or more C files from it, which if compiled properly, will produce a LALR-
+grammar parser. This version adds a '-J' flag which will cause BYACC to
+generate Java source code, instead."
+HOMEPAGE="http://byaccj.sourceforge.net/"
+SRC_URI="mirror://sourceforge/byaccj/byaccj${VERSION}_src.tar.gz"
+SRC_DIR="byaccj${VERSION}"
+
+src_compile() {
+	lndirs
+	cd ${B}/src
+	verbose ${CC} ${CFLAGS} -o byaccj.exe *.c || error "byaccj compile failed"
+}
+
+src_install() {
+	cd ${B}/src
+	dobin byaccj.exe
+	dodoc README new_features no_warranty
+}
